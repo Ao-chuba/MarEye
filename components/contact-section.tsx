@@ -69,8 +69,8 @@ export function ContactSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Contact & Collaboration</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-            Join our research network or get in touch to learn more about our AI-driven deep sea biodiversity platform
-            and conservation initiatives.
+            Join our security network or get in touch to learn more about our MarEye AI-powered marine security platform
+            and defense solutions.
           </p>
         </div>
 

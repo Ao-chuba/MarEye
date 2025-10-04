@@ -19,15 +19,8 @@ export function Navigation() {
 
   const navItems = [
     { href: "/", label: "Home", icon: "🏠" },
-    { href: "/dashboard", label: "Dashboard", icon: "📊" },
-    { href: "/species-recognition", label: "Species ID", icon: "🐠" },
-    { href: "/water-quality", label: "Water Quality", icon: "💧" },
-    { href: "/voice-agent", label: "Voice AI", icon: "🎙️" },
-    { href: "/solutions/ai-processing", label: "AI Tools", icon: "🤖" },
-    { href: "/solutions/conservation-insights", label: "Conservation", icon: "🌊" },
-    { href: "/solutions/population-trends", label: "Trends", icon: "📈" },
-    { href: "/solutions/data-collection", label: "Data", icon: "📋" },
-    { href: "/forum", label: "Forum", icon: "💬" }
+    { href: "/cnn-model", label: "CNN Model", icon: "🧠" },
+    { href: "/detection", label: "Detection", icon: "🎯" }
   ]
 
   useEffect(() => {
@@ -66,18 +59,14 @@ export function Navigation() {
   }, [userData])
 
   const mainNavItems = [
-    { href: "/solutions/data-collection", label: "Watchlist", icon: "📋" },
-    { href: "/solutions/ai-processing", label: "AI Processing", icon: "🤖" },
-    { href: "/voice-agent", label: "Voice AI", icon: "🎙️" },
-    { href: "/species-recognition", label: "Species Recognition", icon: "🔍" },
-    { href: "/water-quality", label: "Water Quality", icon: "💧" },
     { href: "/dashboard", label: "Dashboard", icon: "📊" },
+    { href: "/solutions/ai-processing", label: "AI Processing", icon: "🤖" },
+    { href: "/species-recognition", label: "Species Recognition", icon: "🔍" },
     { href: "/forum", label: "Forum", icon: "💬" },
   ]
 
   const moreNavItems = [
     { href: "/solutions/population-trends", label: "Abundance", icon: TrendingUp },
-    { href: "/solutions/conservation-insights", label: "Conservation", icon: Leaf },
     { href: "/subscription", label: "Subscription", icon: Crown },
   ]
 
@@ -180,14 +169,6 @@ export function Navigation() {
                       >
                         <User className="w-4 h-4" />
                         <span>Profile Settings</span>
-                      </Link>
-                      <Link
-                        href="/dashboard"
-                        className="flex items-center space-x-3 px-4 py-3 text-sm text-cyan-100 hover:text-white hover:bg-white/10 transition-colors duration-200"
-                        onClick={() => setIsProfileOpen(false)}
-                      >
-                        <Settings className="w-4 h-4" />
-                        <span>Dashboard</span>
                       </Link>
                       <div className="border-t border-white/10 my-2"></div>
                       <button

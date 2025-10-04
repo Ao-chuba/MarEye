@@ -6,43 +6,31 @@ import { usePathname, useRouter } from "next/navigation"
 import { BubbleButton } from "@/components/bubble-button"
 import { Menu, X, User, LogOut, Settings, ChevronDown, Zap, Crown, Building2, MoreHorizontal, Phone, BarChart3, TrendingUp, Leaf } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { useAuth } from "@/hooks/use-auth"
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isProfileOpen, setIsProfileOpen] = useState(false)
   const [isMoreOpen, setIsMoreOpen] = useState(false)
   const [avatar, setAvatar] = useState<string>("")
-  const [userData, setUserData] = useState<any>(null)
   const [tokenStatus, setTokenStatus] = useState<any>(null)
   const [subscription, setSubscription] = useState<any>(null)
   const pathname = usePathname()
   const router = useRouter()
+  const { user: userData, logout } = useAuth()
 
   const navItems = [
     { href: "/", label: "Home", icon: "🏠" },
-    { href: "/dashboard", label: "Dashboard", icon: "📊" },
-    { href: "/species-recognition", label: "Species ID", icon: "🐠" },
-    { href: "/water-quality", label: "Water Quality", icon: "💧" },
-    { href: "/voice-agent", label: "Voice AI", icon: "🎙️" },
-    { href: "/solutions/ai-processing", label: "AI Tools", icon: "🤖" },
-    { href: "/forum", label: "Forum", icon: "💬" },
-    { href: "/solutions/conservation-insights", label: "Conservation", icon: "🌊" },
-    { href: "/solutions/population-trends", label: "Abundance", icon: "📈" },
-    { href: "/solutions/data-collection", label: "Data", icon: "📋" }
+    { href: "/cnn-model", label: "CNN Model", icon: "🧠" },
+    { href: "/detection", label: "Detection", icon: "🎯" }
   ]
 
+  // Set avatar when userData changes
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem("profile")
-      if (stored) {
-        const data = JSON.parse(stored)
-        setUserData(data)
-        if (data?.avatar) {
-          setAvatar(data.avatar)
-        }
-      }
-    } catch {}
-  }, [])
+    if (userData?.avatar) {
+      setAvatar(userData.avatar)
+    }
+  }, [userData])
 
   // Fetch token status and subscription info
   useEffect(() => {
@@ -68,18 +56,14 @@ export function Navigation() {
 
   const mainNavItems = [
     { href: "/", label: "Home", icon: "🏠" },
-    { href: "/solutions/data-collection", label: "Watchlist", icon: "📋" },
-    { href: "/solutions/ai-processing", label: "AI Processing", icon: "🤖" },
-    { href: "/voice-agent", label: "Voice AI", icon: "🎙️" },
-    { href: "/species-recognition", label: "Species Recognition", icon: "🔍" },
-    { href: "/water-quality", label: "Water Quality", icon: "💧" },
     { href: "/dashboard", label: "Dashboard", icon: "📊" },
+    { href: "/solutions/ai-processing", label: "AI Processing", icon: "🤖" },
+    { href: "/species-recognition", label: "Species Recognition", icon: "🔍" },
     { href: "/forum", label: "Forum", icon: "💬" },
   ]
 
   const moreNavItems = [
     { href: "/solutions/population-trends", label: "Abundance", icon: TrendingUp },
-    { href: "/solutions/conservation-insights", label: "Conservation", icon: Leaf },
     { href: "/subscription", label: "Subscription", icon: Crown },
   ]
 
@@ -89,14 +73,7 @@ export function Navigation() {
   }
 
   const handleLogout = async () => {
-    try {
-      await fetch('/api/logout', { method: 'POST', credentials: 'include' })
-      localStorage.removeItem("profile")
-      localStorage.removeItem("user")
-      window.location.href = "/auth/login"
-    } catch (error) {
-      console.error("Logout error:", error)
-    }
+    await logout()
   }
 
   return (
@@ -110,13 +87,15 @@ export function Navigation() {
               <div className="flex items-center space-x-2">
                 {/* Brand Logo + Text */}
                 <div className="hidden lg:flex items-center space-x-2">
-                  <img src="/placeholder-logo.png" alt="Oceanova Logo" className="w-20 h-20 drop-shadow" />
+                  <div className="w-20 h-20 overflow-hidden rounded-full">
+                    <img src="/logos/mareye-logo.png" alt="MarEye Logo" className="w-20 h-20 drop-shadow object-cover object-top" />
+                  </div>
                   <div className="flex flex-col leading-tight">
                     <span className="text-xl font-extrabold bg-gradient-to-r from-white via-cyan-100 to-blue-100 bg-clip-text text-transparent tracking-wide">
-                      OCEANOVA
+                      MarEye
                     </span>
                     <span className="text-xs text-cyan-300/40 font-medium tracking-wider">
-                      Marine Conservation Platform
+                      Marine Security Platform
                     </span>
                   </div>
                 </div>
@@ -187,14 +166,6 @@ export function Navigation() {
                       >
                         <User className="w-4 h-4" />
                         <span>Profile Settings</span>
-                      </Link>
-                      <Link
-                        href="/dashboard"
-                        className="flex items-center space-x-3 px-4 py-3 text-sm text-cyan-100 hover:text-white hover:bg-white/10 transition-colors duration-200"
-                        onClick={() => setIsProfileOpen(false)}
-                      >
-                        <Settings className="w-4 h-4" />
-                        <span>Dashboard</span>
                       </Link>
                       <div className="border-t border-white/10 my-2"></div>
                       <button

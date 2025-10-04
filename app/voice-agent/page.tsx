@@ -4,8 +4,9 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Phone, PhoneOff, Square, Play, Volume2, VolumeX, Waves } from "lucide-react"
+import { Phone, PhoneOff, Square, Play, Volume2, VolumeX, Waves, Home } from "lucide-react"
 import { VoiceAgent } from "@/components/voice-agent"
+import Link from "next/link"
 
 export default function VoiceAgentPage() {
   const [isCallActive, setIsCallActive] = useState(false)
@@ -42,16 +43,30 @@ export default function VoiceAgentPage() {
         {/* Header */}
         <header className="p-6 text-center">
           <div className="max-w-4xl mx-auto">
+            {/* Home Button */}
+            <div className="flex justify-start mb-6">
+              <Link href="/">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="bg-slate-800/60 backdrop-blur-sm border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white transition-all duration-300"
+                >
+                  <Home className="h-4 w-4 mr-2" />
+                  Home
+                </Button>
+              </Link>
+            </div>
+            
             <div className="flex items-center justify-center gap-3 mb-4">
               <Waves className="h-8 w-8 text-cyan-400 animate-pulse" />
               <h1 className="text-4xl md:text-6xl font-bold text-balance bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Deep Sea Research AI
+                MarEye Voice AI
               </h1>
               <Waves className="h-8 w-8 text-cyan-400 animate-pulse" style={{ animationDelay: "0.5s" }} />
             </div>
             <p className="text-xl text-slate-300 text-balance max-w-2xl mx-auto">
-              Connect with our AI marine biologist for real-time voice conversations about deep ocean mysteries,
-              underwater ecosystems, and cutting-edge research discoveries.
+              Connect with our AI marine security expert for real-time voice conversations about underwater threats,
+              submarine detection, and marine defense systems.
             </p>
           </div>
         </header>
@@ -63,12 +78,12 @@ export default function VoiceAgentPage() {
             <Card className="mb-8 bg-slate-800/80 backdrop-blur-sm border-slate-700/50">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl text-white">
-                  {isCallActive ? "Connected to AI Marine Biologist" : "AI Marine Biologist"}
+                  {isCallActive ? "Connected to AI Security Expert" : "AI Marine Security Expert"}
                 </CardTitle>
                 <CardDescription className="text-slate-300">
                   {isCallActive
-                    ? "You're now connected! Speak naturally and the AI will respond with voice. Dr. Marina can also end the call when appropriate."
-                    : "Click to start a real-time voice conversation with our AI deep sea expert"}
+                    ? "You're now connected! Speak naturally and the AI will respond with voice. The security expert can also end the call when appropriate."
+                    : "Click to start a real-time voice conversation with our AI marine security expert"}
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col items-center gap-6">
@@ -162,45 +177,45 @@ export default function VoiceAgentPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <Card className="bg-slate-800/60 backdrop-blur-sm border-slate-700/50">
                   <CardHeader>
-                    <CardTitle className="text-cyan-400">🌊 Deep Sea Exploration</CardTitle>
+                    <CardTitle className="text-cyan-400">🚢 Submarine Detection</CardTitle>
                     <CardDescription className="text-slate-300">
-                      Discover the mysteries of the deep ocean with AI-powered research tools
+                      Advanced AI-powered underwater vessel identification systems
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-slate-400 text-sm">
-                      Our AI can help you understand hydrothermal vents, bioluminescent creatures, 
-                      and the unique ecosystems found in the deepest parts of our oceans.
+                      Our AI can help you understand sonar analysis, acoustic signatures, 
+                      and advanced detection techniques for underwater security operations.
                     </p>
                   </CardContent>
                 </Card>
 
                 <Card className="bg-slate-800/60 backdrop-blur-sm border-slate-700/50">
                   <CardHeader>
-                    <CardTitle className="text-cyan-400">🔬 Marine Biology</CardTitle>
+                    <CardTitle className="text-cyan-400">💣 Mine Detection</CardTitle>
                     <CardDescription className="text-slate-300">
-                      Learn about marine species identification and conservation
+                      Learn about underwater mine identification and threat assessment
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-slate-400 text-sm">
-                      Get expert insights on marine life, their habitats, threats they face, 
-                      and conservation strategies to protect our ocean ecosystems.
+                      Get expert insights on mine detection systems, computer vision analysis, 
+                      and threat classification strategies for marine security operations.
                     </p>
                   </CardContent>
                 </Card>
 
                 <Card className="bg-slate-800/60 backdrop-blur-sm border-slate-700/50">
                   <CardHeader>
-                    <CardTitle className="text-cyan-400">🤖 AI Research Assistant</CardTitle>
+                    <CardTitle className="text-cyan-400">🤖 AI Security Assistant</CardTitle>
                     <CardDescription className="text-slate-300">
-                      Real-time voice conversations with Dr. Marina
+                      Real-time voice conversations with security experts
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-slate-400 text-sm">
-                      Have natural conversations about marine science, ask questions about 
-                      ocean research, and get personalized insights from our AI marine biologist.
+                      Have natural conversations about marine security, ask questions about 
+                      underwater defense systems, and get personalized insights from our AI security expert.
                     </p>
                   </CardContent>
                 </Card>

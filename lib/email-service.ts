@@ -64,7 +64,7 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
     from: process.env.HOST_EMAIL,
     to: email,
     // Avoid emojis in subject to reduce spam likelihood
-    subject: 'OTP Verification - AI Biodiversity Platform',
+    subject: 'OTP Verification - MarEye Security Platform',
     text: `Your verification code is: ${otp}\n\nThis code expires in 10 minutes. If you did not request this, you can ignore this email.`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0891b2 100%); padding: 40px; border-radius: 20px; color: white;">
@@ -72,7 +72,7 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
           <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #06b6d4, #3b82f6); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 32px;">
             🌊
           </div>
-          <h1 style="color: #06b6d4; margin: 0; font-size: 28px;">AI Biodiversity Platform</h1>
+          <h1 style="color: #06b6d4; margin: 0; font-size: 28px;">MarEye Security Platform</h1>
           <p style="color: #94a3b8; margin: 10px 0 0; font-size: 16px;">Marine Conservation Technology</p>
         </div>
         
@@ -80,7 +80,7 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
           <h2 style="color: white; margin: 0 0 20px; font-size: 24px;">Email Verification Required</h2>
           ${name ? `<p style="color: #cbd5e1; margin: 0 0 20px; font-size: 16px;">Hello ${name},</p>` : ''}
           <p style="color: #cbd5e1; margin: 0 0 25px; font-size: 16px; line-height: 1.6;">
-            Thank you for joining our AI-driven biodiversity conservation platform! To complete your registration and secure your account, please verify your email address using the OTP below.
+            Thank you for joining our MarEye marine security platform! To complete your registration and secure your account, please verify your email address using the OTP below.
           </p>
           
           <div style="text-align: center; margin: 30px 0;">
@@ -96,7 +96,7 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
         </div>
         
         <div style="text-align: center; color: #94a3b8; font-size: 14px;">
-          <p style="margin: 0;">© 2024 AI Biodiversity Platform. All rights reserved.</p>
+          <p style="margin: 0;">© 2024 MarEye Security Platform. All rights reserved.</p>
           <p style="margin: 10px 0 0;">Protecting marine ecosystems through advanced technology</p>
         </div>
       </div>
@@ -122,14 +122,14 @@ export async function sendWelcomeEmail(email: string, name: string) {
   const mailOptions = {
     from: process.env.HOST_EMAIL,
     to: email,
-    subject: '🎉 Welcome to AI Biodiversity Platform!',
+    subject: '🎉 Welcome to MarEye Security Platform!',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0891b2 100%); padding: 40px; border-radius: 20px; color: white;">
         <div style="text-align: center; margin-bottom: 30px;">
           <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #06b6d4, #3b82f6); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 32px;">
             🎉
           </div>
-          <h1 style="color: #06b6d4; margin: 0; font-size: 28px;">Welcome to AI Biodiversity!</h1>
+          <h1 style="color: #06b6d4; margin: 0; font-size: 28px;">Welcome to MarEye!</h1>
           <p style="color: #94a3b8; margin: 10px 0 0; font-size: 16px;">Marine Conservation Technology</p>
         </div>
         
@@ -137,7 +137,7 @@ export async function sendWelcomeEmail(email: string, name: string) {
           <h2 style="color: white; margin: 0 0 20px; font-size: 24px;">Account Successfully Verified!</h2>
           <p style="color: #cbd5e1; margin: 0 0 20px; font-size: 16px;">Hello ${name},</p>
           <p style="color: #cbd5e1; margin: 0 0 25px; font-size: 16px; line-height: 1.6;">
-            Congratulations! Your account has been successfully verified and activated. You now have full access to our AI-driven biodiversity conservation platform.
+            Congratulations! Your account has been successfully verified and activated. You now have full access to our MarEye marine security platform.
           </p>
           
           <div style="background: rgba(6, 182, 212, 0.2); padding: 20px; border-radius: 10px; margin: 20px 0;">
@@ -160,7 +160,7 @@ export async function sendWelcomeEmail(email: string, name: string) {
         </div>
         
         <div style="text-align: center; color: #94a3b8; font-size: 14px;">
-          <p style="margin: 0;">© 2024 AI Biodiversity Platform. All rights reserved.</p>
+          <p style="margin: 0;">© 2024 MarEye Security Platform. All rights reserved.</p>
           <p style="margin: 10px 0 0;">Thank you for joining our mission to protect marine ecosystems!</p>
         </div>
       </div>

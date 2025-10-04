@@ -34,7 +34,6 @@ export default function TryPage() {
 					<div className="absolute top-4 left-8 flex space-x-8">
 						{[
 							{ label: "Active Sensors", value: "2,847", color: "cyan" },
-							{ label: "Species Detected", value: "1,293", color: "blue" },
 							{ label: "Data Points", value: "847K", color: "teal" },
 						].map((metric, i) => (
 							<div key={metric.label} className="relative group" style={{ animationDelay: `${i * 0.3}s` }}>
@@ -300,7 +299,7 @@ export default function TryPage() {
 									<h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300 animate-pulse">
 										AI-Driven
 									</h3>
-									<p className="text-lg text-cyan-200/90 font-medium">Biodiversity</p>
+									<p className="text-lg text-cyan-200/90 font-medium">MarEye</p>
 								</div>
 							</div>
 						</div>
@@ -308,20 +307,20 @@ export default function TryPage() {
 					<div className="mb-8 relative z-20">
 						<h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-cyan-200 mb-2 leading-none tracking-tight drop-shadow-lg">
 							<span className="inline-block animate-pulse" style={{ animationDelay: "0s" }}>
-								Deep
+								Mar
 							</span>{" "}
 							<span className="inline-block animate-pulse" style={{ animationDelay: "0.2s" }}>
-								Sea
+								Eye
 							</span>
 						</h1>
 						<h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-blue-300 mb-2 leading-none drop-shadow-lg">
 							<span className="inline-block animate-pulse" style={{ animationDelay: "0.4s" }}>
-								Biodiversity
+								Marine
 							</span>
 						</h2>
 						<h3 className="text-3xl md:text-4xl lg:text-5xl font-light text-teal-300 leading-tight drop-shadow-lg">
 							<span className="inline-block animate-pulse" style={{ animationDelay: "0.6s" }}>
-								Research
+								Security
 							</span>{" "}
 							<span className="inline-block animate-pulse" style={{ animationDelay: "0.8s" }}>
 								Platform
@@ -332,10 +331,10 @@ export default function TryPage() {
 					<div className="relative mb-6">
 						<div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent blur-xl"></div>
 						<p className="relative text-2xl md:text-3xl text-blue-100/95 max-w-4xl mx-auto leading-relaxed font-light text-balance">
-							Revolutionizing marine conservation through{" "}
-							<span className="text-cyan-300 font-medium">advanced AI-powered</span> species identification,
-							environmental monitoring, and <span className="text-teal-300 font-medium">predictive analytics</span> for
-							deep ocean ecosystems.
+							Revolutionizing marine security through{" "}
+							<span className="text-cyan-300 font-medium">advanced AI-powered</span> submarine detection,
+							mine identification, and <span className="text-teal-300 font-medium">threat assessment</span> for
+							underwater defense systems.
 						</p>
 					</div>
 
@@ -346,12 +345,11 @@ export default function TryPage() {
 							<div className="relative rounded-xl border border-cyan-400/20 bg-slate-900/40 backdrop-blur-sm p-6 shadow-sm hover:border-cyan-400/40 transition-all duration-300">
 								<div className="flex items-center space-x-3 mb-3">
 									<div className="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></div>
-									<h2 className="text-xl font-semibold text-cyan-100">Species Identification</h2>
+									<h2 className="text-xl font-semibold text-cyan-100">Submarine Detection</h2>
 								</div>
 								<p className="text-sm text-cyan-200/80">
 
-									Upload images to identify species using computer vision models and access
-									confidence scores.
+									Advanced AI-powered sonar analysis and acoustic signature recognition for underwater vessel identification.
 								</p>
 							</div>
 						</div>
@@ -362,44 +360,11 @@ export default function TryPage() {
 							<div className="relative rounded-xl border border-blue-400/20 bg-slate-900/40 backdrop-blur-sm p-6 shadow-sm hover:border-blue-400/40 transition-all duration-300">
 								<div className="flex items-center space-x-3 mb-3">
 									<div className="w-3 h-3 rounded-full bg-blue-400 animate-pulse"></div>
-									<h2 className="text-xl font-semibold text-blue-100">Conservation Insights</h2>
+									<h2 className="text-xl font-semibold text-blue-100">Mine Detection</h2>
 								</div>
 								<p className="text-sm text-blue-200/80">
 
-									AI-assisted recommendations for conservation strategies driven by
-									spatial and temporal data.
-								</p>
-							</div>
-						</div>
-						
-						<div className="relative group">
-							<div className="absolute inset-0 bg-gradient-to-r from-teal-400/10 to-cyan-400/10 rounded-xl blur-xl animate-pulse"></div>
-
-							<div className="relative rounded-xl border border-teal-400/20 bg-slate-900/40 backdrop-blur-sm p-6 shadow-sm hover:border-teal-400/40 transition-all duration-300">
-								<div className="flex items-center space-x-3 mb-3">
-									<div className="w-3 h-3 rounded-full bg-teal-400 animate-pulse"></div>
-									<h2 className="text-xl font-semibold text-teal-100">Water Quality Analysis</h2>
-								</div>
-								<p className="text-sm text-teal-200/80">
-
-									Visualize water quality metrics and hotspots with interactive maps and
-									model-based predictions.
-								</p>
-							</div>
-						</div>
-						
-						<div className="relative group">
-							<div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-xl blur-xl animate-pulse"></div>
-
-							<div className="relative rounded-xl border border-cyan-400/20 bg-slate-900/40 backdrop-blur-sm p-6 shadow-sm hover:border-cyan-400/40 transition-all duration-300">
-								<div className="flex items-center space-x-3 mb-3">
-									<div className="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></div>
-									<h2 className="text-xl font-semibold text-cyan-100">Gene Sequence Analysis</h2>
-								</div>
-								<p className="text-sm text-cyan-200/80">
-
-									Analyze genetic sequences to predict functional annotations and
-									potential threats.
+									AI-powered computer vision for underwater mine identification, classification, and threat assessment.
 								</p>
 							</div>
 						</div>

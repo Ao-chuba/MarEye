@@ -13,15 +13,15 @@ import { Chatbot } from "@/components/chatbot"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "OCEANOVA",
+  title: "MarEye",
   description:
-    "Advanced AI-powered platform for deep-sea marine species identification, environmental threat assessment, water quality monitoring, and conservation insights using cutting-edge machine learning and environmental DNA analysis.",
+    "Advanced AI-powered marine security platform for submarine detection, mine identification, diver tracking, drone surveillance, torpedo analysis, and underwater threat assessment using cutting-edge computer vision and machine learning.",
   keywords:
-    "marine biodiversity, deep sea research, species identification, AI, environmental DNA, water quality, conservation, marine biology",
-  authors: [{ name: "AI-Driven Biodiversity Research Team" }],
+    "marine security, submarine detection, mine detection, diver tracking, underwater drones, torpedo analysis, AI, computer vision, underwater surveillance, naval defense",
+  authors: [{ name: "MarEye Security Team" }],
   openGraph: {
-    title: "AI-Driven Deep Sea Biodiversity Platform",
-    description: "Revolutionary AI platform for marine conservation and species discovery",
+    title: "MarEye - AI-Driven Marine Security Defense Platform",
+    description: "Revolutionary AI platform for underwater security and threat detection",
     type: "website",
   },
   generator: "v0.app",

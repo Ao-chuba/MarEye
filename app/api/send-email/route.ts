@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
               💬
             </div>
             <h1 style="color: #06b6d4; margin: 0; font-size: 28px;">New Contact Message</h1>
-            <p style="color: #94a3b8; margin: 10px 0 0; font-size: 16px;">AI Biodiversity Platform</p>
+            <p style="color: #94a3b8; margin: 10px 0 0; font-size: 16px;">MarEye Marine Security Platform</p>
           </div>
           
           <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; margin-bottom: 30px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
@@ -105,7 +105,7 @@ export async function POST(req: NextRequest) {
           </div>
           
           <div style="text-align: center; color: #94a3b8; font-size: 14px;">
-            <p style="margin: 0;">© 2024 AI Biodiversity Platform. All rights reserved.</p>
+            <p style="margin: 0;">© 2024 MarEye Marine Security Platform. All rights reserved.</p>
             <p style="margin: 10px 0 0;">This is an automated notification from the contact system.</p>
           </div>
         </div>
@@ -120,7 +120,7 @@ export async function POST(req: NextRequest) {
               📊
             </div>
             <h1 style="color: #06b6d4; margin: 0; font-size: 28px;">New Data Submission</h1>
-            <p style="color: #94a3b8; margin: 10px 0 0; font-size: 16px;">AI Biodiversity Platform</p>
+            <p style="color: #94a3b8; margin: 10px 0 0; font-size: 16px;">MarEye Marine Security Platform</p>
           </div>
           
           <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; margin-bottom: 30px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
@@ -174,7 +174,7 @@ export async function POST(req: NextRequest) {
           </div>
           
           <div style="text-align: center; color: #94a3b8; font-size: 14px;">
-            <p style="margin: 0;">© 2024 AI Biodiversity Platform. All rights reserved.</p>
+            <p style="margin: 0;">© 2024 MarEye Marine Security Platform. All rights reserved.</p>
             <p style="margin: 10px 0 0;">This is an automated notification from the data submission system.</p>
           </div>
         </div>
@@ -189,7 +189,7 @@ export async function POST(req: NextRequest) {
     if (isContactForm) {
       const { firstName, lastName, email, institution, message } = data
       textContent = `
-NEW CONTACT FORM SUBMISSION - OCEANOVA
+NEW CONTACT FORM SUBMISSION - MarEye
 
 Name: ${firstName} ${lastName}
 Email: ${email}
@@ -199,7 +199,7 @@ Message:
 ${message}
 
 ---
-This email was sent from the Oceanova contact form.
+This email was sent from the MarEye contact form.
 Reply directly to this email to respond to ${firstName}.
       `
       subject = `🌊 Contact Form: ${firstName} ${lastName} from ${institution}`
@@ -208,7 +208,7 @@ Reply directly to this email to respond to ${firstName}.
       // Data submission
       const { name, email, institution, description, selectedTools, fileName, fileSize, fileType } = data
       textContent = `
-NEW DATA SUBMISSION - OCEANOVA
+NEW DATA SUBMISSION - MarEye
 
 Researcher: ${name}
 Email: ${email}
@@ -223,7 +223,7 @@ ${description}
 ${fileName ? `Attached File: ${fileName} (${fileSize ? (fileSize / 1024 / 1024).toFixed(2) + ' MB' : 'Unknown size'}, ${fileType || 'Unknown type'})` : 'No file attached'}
 
 ---
-This email was sent from the Oceanova data submission system.
+This email was sent from the MarEye data submission system.
 Reply directly to this email to respond to ${name}.
 The file is attached to this email and can be downloaded.
       `
@@ -233,7 +233,7 @@ The file is attached to this email and can be downloaded.
 
     // Prepare email options
     const mailOptions: any = {
-      from: `"Oceanova Platform" <${hostEmail}>`,
+      from: `"MarEye Platform" <${hostEmail}>`,
       to: 'aochuba52@gmail.com',
       replyTo: replyTo, // Allow direct reply to the sender
       subject: subject,
